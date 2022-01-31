@@ -16,14 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ char 
+ double 
+ unsigned int
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -60,9 +58,29 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    float loanRepayment = 2.f; 
+    float repaymentAmount = 4.f;
+    float monthlyFee = 6.f;
 
+    int brandName = 777;
+    int brandReach = 100;
+    int brandMarketCap = 200;
+
+    double antLength = 1.2;
+    double beeLength = 3.4;
+    double wormLength = 5.6;
+
+    char grade = 'A';
+    char firstInitial = 'K';
+    char secondInitial = 'A';
+
+    bool hoursWorked = false;
+    bool overtimePay = true;
+    bool sickPay = false;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, loanRepayment, repaymentAmount, monthlyFee, brandName, brandReach, brandMarketCap, antLength, beeLength, wormLength, grade, firstInitial, secondInitial, hoursWorked, overtimePay, sickPay); 
+    
+    //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,43 +97,85 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+float monthlyCharge(int initialTerm, int aprPercentage = 0)
+{ 
+    ignoreUnused(initialTerm, aprPercentage);
+    return {};
+}
 /*
  2)
  */
-
+int milesTravelled(int wheelRotations, int gasUsed = 55)
+{
+    ignoreUnused(wheelRotations, gasUsed);
+    return {};
+}
 /*
  3)
  */
-
+bool manLies (bool heartrateIncreases, bool manSweats = true)
+{
+    ignoreUnused(heartrateIncreases, manSweats);
+    return {};
+}
 /*
  4)
  */
-
+bool pigeonFlies (bool wingsFlap, bool altitudeIncreases = true)
+{
+    ignoreUnused(wingsFlap, altitudeIncreases);
+    return {};
+}
 /*
  5)
  */
-
+bool dogBarks (bool isLoud, bool neighboursCry = true)
+{
+    ignoreUnused(isLoud, neighboursCry);
+    return {};
+}
 /*
  6)
  */
-
+bool catSwims (bool getsWet, bool isSad = true)
+{
+    ignoreUnused(getsWet, isSad);
+    return {};
+}    
 /*
  7)
  */
+int kmPerHour (int elapsedTime, int kmTravelled = 345)
+{
+    ignoreUnused(elapsedTime, kmTravelled);
+    return {};
+}
+
 
 /*
  8)
  */
-
+bool laptopBreaks (bool catchesFire, bool explodes = true)
+{
+    ignoreUnused(catchesFire, explodes);
+    return{};
+}
 /*
  9)
  */
-
+int buyHouse (int houseDeposit, int mortgagePayments = 1666)
+{
+    ignoreUnused(houseDeposit, mortgagePayments);
+    return{};
+}
 /*
  10)
  */
-
+int getHired (int applyForJob, int passInterview = 1234)
+{
+    ignoreUnused(applyForJob, passInterview);
+    return{};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +196,32 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto moneyPaid = monthlyCharge (0); //float monthlyCharge(int initialTerm, int aprPercentage = 0)
+
     //2)
+    auto distanceDrove = milesTravelled (100);
+   //int milesTravelled(int wheelRotations, int gasUsed = 55)
     
-    //3)
-    
+    //3) 
+    auto mouthOpens = manLies (true);
+
+            //bool manLies (bool heartrateIncreases, bool manSweats = true)
     //4)
-    
+    auto wingsFlap = pigeonFlies (true);
     //5)
-    
+    auto dogIsAngry = dogBarks (true);
     //6)
-    
+    auto entersWater = catSwims (true);
     //7)
-    
+    auto measuresKm = kmPerHour (345);
     //8)
-    
+    auto trashComputer = laptopBreaks (true);
     //9)
-    
+    auto acquireProperty = buyHouse (1666);
     //10)
+    auto beEmployed = getHired (1234);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, moneyPaid, distanceDrove, mouthOpens, wingsFlap, dogIsAngry, entersWater, measuresKm, trashComputer, acquireProperty, beEmployed);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
